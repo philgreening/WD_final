@@ -11,30 +11,34 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="#">Film Club</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<header>
+    <span id="navigation"></span>
+<!--    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">-->
+<!--        <a class="navbar-brand" href="#">Film Club</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse " id="collapsibleNavbar">-->
+<!--            <script id="menu-template" type="text/x-handlebars-template">-->
+<!--                <ul class="navbar-nav">-->
+<!--                    {{#each menu}}-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="{{link}}.html">{{name}}</a>-->
+<!--                        </li>-->
+<!--                    {{/each}}-->
+<!--                </ul>-->
+<!--            </script>-->
+<!--            <span id="target"></span>-->
+<!--        </div>-->
+<!--    </nav>-->
 
-    <div class="collapse navbar-collapse " id="collapsibleNavbar">
-        <script id="menu-template" type="text/x-handlebars-template">
-            <ul class="navbar-nav">
-                {{#each menu}}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{link}}.html">{{name}}</a>
-                </li>
-                {{/each}}
-            </ul>
-        </script>
-        <span id="target"></span>
-    </div>
-</nav>
-
+</header>
+<!--feature article-->
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container-xl">
     </div>
 </div>
+
 <!-- carousel HTML -->
 <div class="carousel-container">
     <div class="carousel-slide-container">
@@ -70,12 +74,55 @@
     <a class="carousel-right" onclick="slides(1)">&#10095</a>
 
 </div>
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
+<!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-6 my-4">
+            <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400">
+        </div>
+        <div class="col-xl-6 my-4">
+            <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400">
+        </div>
+    </div>
+
+</div>
+<!--<footer>-->
+<!--    <nav class="navbar navbar-light bg-light ">-->
+<!--        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
+<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>-->
+<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Profile</a>-->
+<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Messages</a>-->
+<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Settings</a>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</footer>-->
+
+<footer>
+    <nav class="navbar navbar-light bg-light ">
+        <div class="container-xl">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>
+            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Articles and Reviews</a>
+            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">News and Events</a>
+            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Join</a>
+            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">About</a>
+        </div>
+        </div>
+    </nav>
+</footer>
 
 
-<script src="Libraries/jquery/jquery-3.5.1.slim.min.js"></script>
+
+<script src="Libraries/jquery/jquery-3.5.1.min.js"></script>
 <script src="Libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
 <script src="Libraries/handlebars/handlebars.min-v4.7.6.js"></script>
 <script src="javascript/script.js"></script>
+<script src="javascript/carousel.js"></script>
 
 </body>
 </html>

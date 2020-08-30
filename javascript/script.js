@@ -1,7 +1,17 @@
-var menuTemplate = document.getElementById("menu-template").innerHTML;
-var compiledMenuTemplate = Handlebars.compile(menuTemplate);
+//handlebars template for navigation bar
 
-var  menuItem = compiledMenuTemplate ({
+//jquery AJAX call to import handlebars header template into each page
+$.get('partials/header.hbs', function(menuTemplate) {
+    // once received, convert the raw template to a handlebars template
+    var compiledMenuTempate = Handlebars.compile(menuTemplate);
+    // compile the template with your context 'data' and set it on an element with an id
+    $('#navigation').html(compiledMenuTempate(menuData));
+}, 'html'); // <-- tell jquery to load the file as html
+
+// var menuTemplate = document.getElementById("menu-template").innerHTML;
+// var compiledMenuTemplate = Handlebars.compile(menuTemplate);
+
+var  menuData = {
     menu: [
         {
             "name": "Home",
@@ -9,52 +19,24 @@ var  menuItem = compiledMenuTemplate ({
         },
         {
             "name": "Articles and Reviews",
-            "link": "#"
+            "link": "articles"
         },
         {
             "name": "News and Events",
-            "link": "#"
+            "link": "newsandevents"
         },
         {
             "name": "How to Join",
-            "link": "#"
+            "link": "cinemas"
         },
         {
             "name": "About",
-            "link": "#"
+            "link": "about"
         },
     ]
-});
-
-document.getElementById("target").innerHTML = menuItem;
-
-//Carousel script
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function slides(n){
-    showSlides(slideIndex += n);
-    //moveSlides();
 }
-function showSlides(n) {
-    var slides = document.getElementsByClassName("carousel-slide-container");
-    if (n > slides.length){
-        slideIndex = 1;
-    }
-    if (n < 1){
-        slideIndex = slides.length
-    }
-    for (var i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex -1].style.display = "flex";
-    //slides[slideIndex -1].style.flexDirection = "column";
-}
-//document.getElementsByClassName("carousel-left")addEventListener("click", moveSlides())
 
-// function moveSlides() {
-//     var carousel = document.getElementsByClassName("carousel-slide");
-//     carousel.style.right = "200";
-//     console.log(carousel);
-// }
+// document.getElementById("target").innerHTML = menuItem;
+//document.body.innerHTML += compiledMenuTemplate(menuItem);
+//Handlebars.registerPartial('header', Handlebars.template[header.hbs], )
+
