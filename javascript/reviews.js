@@ -1,51 +1,62 @@
 //review box
+
 function changeText(n) {
-    document.getElementById("review-text").innerHTML = filmItem.film[n].review;
+    document.getElementById("review-text-container").innerHTML = filmItem.film[n].review;
+    var reviewText = document.getElementById("review-text-container")
+    if (reviewText.style.display !== "block") {
+        reviewText.style.display = "block";
+    } else {
+        reviewText.style.display = "none";
+    }
 }
 
-
-// document.getElementById("btn").addEventListener("click", function() {
-//     document.getElementById("review-text").innerHTML = "review"},false);
-
-
-// function changeText(id) {
-//     return document.getElementById(id)
-// }
-
-
-//var content = document.getElementById("content");
 var ReviewTemplate = document.getElementById("review-template").innerHTML;
 var compiledReviewTemplate = Handlebars.compile(ReviewTemplate);
 
 var filmItem = {
     "film": [
         {
-            "film-title": "Casablanca",
+            "film-title": "Pandora's Box",
             "review": "<p>something about Bogart</p>",
             "link": "via.placeholder.com/240x160",
+            "image": "assets/images/pandorasBoxReview.png",
+            "date": "(1929)",
+            "director": "G.W.Pabst",
+            "alt-text": "Image from Pandora's Box",
             "number": 1
         },
         {
-            "film-title": "Bill and Ted",
+            "film-title": "Princess Mononoke",
             "review": "<p>Totally savoury film</p>",
             "link": "via.placeholder.com/240x160",
+            "image": "assets/images/mononokeReview.png",
+            "date": "(1997)",
+            "director": "Hayao Miyazaki",
+            "alt-text": "Image from Princess Mononoke",
             "number": 2
         },
         {
-            "film-title": "Ghost",
+            "film-title": "Tokyo Story",
             "review": "<p>Get off my train!!</p>",
             "link": "via.placeholder.com/240x160",
+            "image": "assets/images/tokyoStoryReview.png",
+            "date": "(1953)",
+            "director": "Yasujirô Ozu",
+            "alt-text": "Image from Tokyo Story",
             "number": 3
         },
         {
-            "film-title": "Rocky",
+            "film-title": "Knives Out",
             "review": "<p>Eat lightning and crap thunder!</p>",
             "link": "via.placeholder.com/240x160",
+            "image":"assets/images/knivesOutReview.png",
+            "date": "(2019)",
+            "director": "Rian Johnson",
+            "alt-text": "Image from Knives Out",
             "number": 4
         },
     ]
 };
-//content.innerHTML = compiledReviewTemplate(reviewItem)
 
 document.getElementById("review-content").innerHTML = compiledReviewTemplate(filmItem);
 

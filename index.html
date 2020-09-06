@@ -12,7 +12,7 @@
 
 <body>
 <header>
-    <span id="navigation"></span>
+    <span id="navigation" class="sticky-top"></span>
 <!--    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">-->
 <!--        <a class="navbar-brand" href="#">Film Club</a>-->
 <!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">-->
@@ -39,63 +39,69 @@
     <img src="assets/images/brooksBanner.svg" alt="Banner image of Louise Brooks">
     <blockquote class="blockquote text-right text-light">
         <h1 class=" quote-text mb-0">"There is no Garbo, there is no Dietrich,<br> there is only Louise Brooks."</h1>
-        <footer class="blockquote-footer text-light">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></footer>
+        <footer class="blockquote-footer text-light" id="cite-text">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></footer>
         <button type="button" class="button-text btn btn-dark">Read more</button>
     </blockquote>
-
 </div>
+
 
 <!-- carousel HTML -->
-<div class="carousel-container">
-    <div class="carousel-slide-container">
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 1</div>
-        </div>
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 2</div>
-        </div>
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 3</div>
-        </div>
-    </div>
-    <div class="carousel-slide-container">
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 4</div>
-        </div>
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 5</div>
-        </div>
-        <div class="carousel-slide">
-            <a href="https://placeholder.com"><img src="https://via.placeholder.com/280x200"></a>
-            <div class="carousel-text">Some text 6</div>
-        </div>
-    </div>
+<div id="event-container">
+        <h1 class="section-font">Events</h1>
 
-    <a class="carousel-left" onclick="slides(-1)">&#10094;</a>
-    <a class="carousel-right" onclick="slides(1)">&#10095</a>
+    <div class="carousel-container">
 
+        <div class="row carousel-slide-container">
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket1.svg" alt="Friendly Neighbourhood Cinema event"></a>
+            </div>
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket2.svg" alt="The Great British Drive In event"></a>
+            </div>
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket3.svg" alt="Open City Documentary Festival event"></a>
+            </div>
+        </div>
+        <div class="row carousel-slide-container">
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket4.svg" alt="Blackstar Film Festival event"></a>
+            </div>
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket5.svg" alt="Adventures for the Bold and the Brave event"></a>
+            </div>
+            <div class="col-xl p-2">
+                <a href="https://placeholder.com"><img src="assets/images/eventTicket6.svg" alt="BFI Japan 2020"></a>
+            </div>
+        </div>
+
+        <a class="carousel-left" onclick="slides(-1)">&#10094;</a>
+        <a class="carousel-right" onclick="slides(1)">&#10095</a>
+
+    </div>
+    </div>
 </div>
+<!--</div>-->
 <!--<div class="container">-->
 <!--    <div class="row">-->
 <!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
 <!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="container">
-    <div class="row">
-        <div class="col-xl-6 my-4">
-            <a href="articles.html"><img src="assets/images/reviews_unsplash.jpg" alt="Article link picture">
-        </div>
-        <div class="col-xl-6 my-4">
-            <a href="cinemas.html"><img src="assets/images/cinema_unsplash.jpg" alt="Cinema link picture">
+<div id="review-cinema-container">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-xl-6 my-4 ">
+                <a href="articles.html"><img class="link-image" src="assets/images/reviews_unsplash.jpg" alt="Article link picture">
+                    <div class="overlay"></div>
+                    <p class="title-font">ARTICLES AND REVIEWS</p>
+            </div>
+            <div class="col-xl-6 my-4 ">
+                <a href="cinemas.html"><img class="link-image" src="assets/images/cinema_unsplash.jpg" alt="Cinema link picture">
+                    <div class="overlay"></div>
+                    <p class="title-font">LOCAL INDEPENDENT CINEMAS</p>
+            </div>
         </div>
     </div>
-
 </div>
 <!--<footer>-->
 <!--    <nav class="navbar navbar-light bg-light ">-->
@@ -109,7 +115,7 @@
 <!--</footer>-->
 
 <footer>
-    <nav class="navbar navbar-light bg-light ">
+    <nav class="navbar navbar-dark bg-dark ">
         <div class="container-xl">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>

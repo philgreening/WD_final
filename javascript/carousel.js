@@ -21,10 +21,3 @@ function showSlides(n) {
     slides[slideIndex -1].style.display = "flex";
     //slides[slideIndex -1].style.flexDirection = "column";
 }
-//document.getElementsByClassName("carousel-left")addEventListener("click", moveSlides())
-
-// function moveSlides() {
-//     var carousel = document.getElementsByClassName("carousel-slide");
-//     carousel.style.right = "200";
-//     console.log(carousel);
-// }
