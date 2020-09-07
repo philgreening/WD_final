@@ -18,11 +18,22 @@
 
 </header>
 
-<div class="article-container">
+<div id="article-container">
         <h1 class="section-font section-header-article">Feature</h1>
-        <article class="article-img">
-    <!--        <div class="img-float">-->
-            <a href="https://placeholder.com"><img class="img-float" src="assets/images/brooksArticle.jpg" alt="Picture of Louise Brooks"></a>
+        <article class="article">
+            <a id="open-modal"><img class="article-img-float" src="assets/images/brooksArticle.jpg" alt="Picture of Louise Brooks"></a>
+            <div id="modal-overlay"></div>
+            <div id="modal">
+                <div id="modal-content">
+                    <button type="button" id="close-button" class="btn btn-dark button-text float-right p-2">Close</button>
+                    <h1>Louise Brooks</h1>
+                    <ul class="bio-list">
+                        <li><h6>Born:</h6>November 14, 1906 in Cherryvale, Kansas, USA</li>
+                        <li><h6>Died:</h6>August 8, 1985 (age 78) in Rochester, New York, USA</li>
+                        <li><h6>Selected Filmography:</h6>A Girl in Every Port (1928)<br>Beggars of Life (1928)<br>The Canary Murder Case (1929)<br>Pandora's Box (1929)<br>Diary of a Lost Girl (1929)<br>Overland Stage Raiders (1938)</li>
+                    </ul>
+                </div>
+            </div>
             <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ex nihil quae. Beatae consequuntur dignissimos
                 eum inventore ipsa maiores minima nihil optio, quasi qui, sequi tempora temporibus velit! Doloribus exercitationem,
                 illum labore laboriosam magnam quaerat totam! Ad atque beatae cum dicta earum eligendi enim eveniet exercitationem fugiat illum
@@ -38,34 +49,9 @@
                 reprehenderit sed suscipit, ullam vel veniam veritatis voluptatem voluptates.</p>
         </article>
 </div>
-<section class="review-container">
-    <h1 class="section-font section-header-review">Reviews</h1>
-    <div id="review-content">
+<!--    Review section imported from Handlebars template reviews.hbs-->
+<span id="reviews"></span>
 
-<!--    <div id="review-content"></div>-->
-
-    <script id="review-template" type="text/x-handlebars-template">
-        {{#each film}}
-            <div class="review-item{{number}}">
-                <a><img id="review-image"  src="{{image}}" alt="{{alt-text}}"></a>
-                <div class="overlay-review" >
-                    <p>{{film-title}}<br>{{date}}<br>{{director}}</p>
-                </div>
-<!--                    <div class="title-font">{{film-title}}</div>-->
-<!--                <button type="button" id="review-button" class=" btn-dark btn-block button-text" onclick="changeText({{@index}})">{{film-title}}</button>-->
-<!--                <div class="button-container{{number}}">-->
-<!--                    <button type="button" id="review-button" class=" btn-dark btn-block button-text" onclick="changeText({{@index}})">{{film-title}}</button>-->
-<!--                </div>-->
-            </div>
-            <div class="button-container{{number}}">
-                 <button type="button" id="review-button" class=" btn-dark btn-block button-text" onclick="changeText({{@index}})">{{film-title}}</button>
-            </div>
-        {{/each}}
-    </script>
-<!--    </div>-->
-    </div>
-    <article id="review-text-container"></article>
-</section>
 <footer>
     <nav class="navbar navbar-light bg-light ">
         <div class="container-xl">
@@ -84,6 +70,7 @@
 <script src="Libraries/handlebars/handlebars.min-v4.7.6.js"></script>
 <script src="javascript/script.js"></script>
 <script src="javascript/reviews.js"></script>
+<script src="javascript/modal.js"></script>
 
 </body>
 

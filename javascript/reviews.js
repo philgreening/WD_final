@@ -1,7 +1,15 @@
 //review box
 
+//jquery AJAX call to import handlebars header template into each page
+$.get('partials/reviews.hbs', function(reviewTemplate) {
+    // once received, convert the raw template to a handlebars template
+    var compiledReviewTemplate = Handlebars.compile(reviewTemplate);
+    // compile the template with your context 'data' and set it on an element with an id
+    $('#reviews').html(compiledReviewTemplate(filmData));
+}, 'html'); // <-- tell jquery to load the file as html
+
 function changeText(n) {
-    document.getElementById("review-text-container").innerHTML = filmItem.film[n].review;
+    document.getElementById("review-text-container").innerHTML = filmData.film[n].review;
     var reviewText = document.getElementById("review-text-container")
     if (reviewText.style.display !== "block") {
         reviewText.style.display = "block";
@@ -10,10 +18,10 @@ function changeText(n) {
     }
 }
 
-var ReviewTemplate = document.getElementById("review-template").innerHTML;
-var compiledReviewTemplate = Handlebars.compile(ReviewTemplate);
+// var reviewTemplate = document.getElementById("review-template").innerHTML;
+// var compiledReviewTemplate = Handlebars.compile(reviewTemplate);
 
-var filmItem = {
+var filmData = {
     "film": [
         {
             "film-title": "Pandora's Box",
@@ -58,6 +66,6 @@ var filmItem = {
     ]
 };
 
-document.getElementById("review-content").innerHTML = compiledReviewTemplate(filmItem);
-
-console.log(filmItem.film[0].review);
+// document.getElementById("review-content").innerHTML = compiledReviewTemplate(filmItem);
+//
+// console.log(filmItem.film[0].review);
