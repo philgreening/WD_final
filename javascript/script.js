@@ -26,7 +26,7 @@ var  menuData = {
             "link": "newsandevents"
         },
         {
-            "name": "How to Join",
+            "name": "Local Cinemas",
             "link": "cinemas"
         },
         {
@@ -40,3 +40,8 @@ var  menuData = {
 //document.body.innerHTML += compiledMenuTemplate(menuItem);
 //Handlebars.registerPartial('header', Handlebars.template[header.hbs], )
 
+document.getElementById("submit").addEventListener("click", success);
+
+function success() {
+    document.getElementById("success").innerHTML = "Form submitted successfully";
+}

@@ -1,0 +1,22 @@
+<div id="cinema-container">
+    <h1 class="section-font section-header">Local Independent Cinemas</h1>
+    {{#each cinema}}
+    <div class="cinema">
+        <h1 class="cinema-font">{{name}}</h1>
+        <div class="cinema-description">
+            <a href="{{link}}"><h3>Showing now</h3></a>
+            <p class="cinema-text">
+                <b>Address:</b><br>
+                {{address.street}}<br>
+                {{address.line1}}<br>
+                {{address.city}}<br>
+                {{address.postcode}}
+            </p>
+            <p class="cinema-desc">{{description}}</p>
+        </div>
+        <div class="map">
+            <iframe src="{{map}}"></iframe>
+        </div>
+    </div>
+    {{/each}}
+</div>

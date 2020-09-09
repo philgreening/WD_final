@@ -1,17 +1,17 @@
 <section class="review-container">
 <h1 class="section-font section-header">Reviews</h1>
-<div id="review-content">
-        {{#each film}}
-            <div class="review-item{{number}}">
-                <a><img class="image"  src="{{image}}" alt="{{alt-text}}"></a>
-                <div class="overlay-review">
-                    <p>{{film-title}}<br>{{date}}<br>{{director}}</p>
+    <div id="review-content">
+            {{#each film}}
+                <div class="review-item{{number}}">
+                    <a><img class="image"  src="{{image}}" alt="{{alt-text}}"></a>
+                    <div class="overlay-review">
+                        <p>{{film-title}}<br>{{date}}<br>{{director}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="button-container{{number}}">
-                <a href="#review-text-container"><button type="button" id="review-button" class=" btn-dark btn-block button-text" onclick="changeText({{@index}})">{{film-title}}</button></a>
-            </div>
-        {{/each}}
-</div>
+                <div class="button-container{{number}}">
+                    <a href="#review-text-container"><button type="button" id="review-button" class=" btn-dark btn-block button-text" onclick="changeText({{@index}})">{{film-title}}</button></a>
+                </div>
+            {{/each}}
+    </div>
 <article id="review-text-container"></article>
 </section>
