@@ -2,7 +2,7 @@
     <h1 class="section-font section-header">Events</h1>
     <div id="event">
         {{#each event}}
-        <div class="event-{{@index}}">
+        <div id="event-{{@index}}">
             <a href="https://{{link}}"><img class="image" src="{{image}}" alt="{{alt}}"></a>
             <div class="hide-event">
                 <p>{{event-title}}<br>{{location}}<br>{{date}}<br>{{description}}</p>

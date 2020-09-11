@@ -1,7 +1,7 @@
 //review box
 
 //jquery AJAX call to import handlebars header template into each page
-$.get('partials/reviews.hbs', function(reviewTemplate) {
+$.get('templates/reviews.hbs', function(reviewTemplate) {
     // once received, convert the raw template to a handlebars template
     var compiledReviewTemplate = Handlebars.compile(reviewTemplate);
     // compile the template with your context 'data' and set it on an element with an id

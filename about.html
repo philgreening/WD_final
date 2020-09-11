@@ -12,9 +12,13 @@
 
 <body>
 <header>
-    <!--    Navigation imported from handlebars template header.hbs-->
-    <span id="navigation"></span>
-
+    <!--Navigation appended from header.hbs-->
+    <nav class="breadcrumb-nav" aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-end mr-5 ">
+            <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
+            <li class="breadcrumb-item active text-dark" aria-current="page">About</li>
+        </ol>
+    </nav>
 </header>
 
 <div class="page-container">
@@ -22,39 +26,27 @@
     <section class="about-container">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur atque aut, beatae consequuntur dolores earum eius ex exercitationem ipsam libero necessitatibus obcaecati optio pariatur porro, quas quisquam repellat vitae. Cum impedit modi mollitia pariatur suscipit. Alias at beatae culpa deleniti dicta doloremque eligendi esse fugiat illo in ipsum, laborum magnam maiores minus nam nostrum officia placeat quod reprehenderit sequi sunt voluptate voluptatem? Ab accusantium atque aut cumque cupiditate id necessitatibus, pariatur possimus qui quibusdam, rerum tenetur. Commodi eos error mollitia perspiciatis, quidem quo reiciendis sed voluptas. Cum dolores dolorum eligendi error, impedit itaque, maiores pariatur possimus quam sunt voluptatibus.</p>
     </section>
-    <div class="sub-page-container">
+    <section class="sub-page-container">
         <h1 class="section-header section-font">Join the Club</h1>
-        <div id="join-container">
         <form id="join-form">
             <label for="forename"><b>Forename:</b></label>
-            <input type="text" id="forename" name="forename" value="Forename"><br>
+            <input type="text" id="forename" name="forename" placeholder="First name">
             <label for="surname"><b>Surname:</b></label>
-            <input type="text" id="surname" name="surname" value="Surname"><br>
+            <input type="text" id="surname" name="surname" placeholder="Last name">
             <label for="email"><b>Email Address:</b></label>
-            <input type="email" id="email" name="email" value="Email address"><br>
+            <input type="email" id="email" name="email" placeholder="email@address.com">
             <label for="message"><b>Message:</b></label>
-            <input type="text" id="message" name="message" value="Add a message"><br>
-            <label for="chkbx"><b>Tick if you wish to receive out newsletter:</b></label>
+            <textarea id="message" name="message" placeholder="Add a message"></textarea>
+            <label for="chkbx"><b>Tick if you wish to receive our newsletter:</b></label>
             <input type="checkbox" id="chkbx" name="checkbox" value="Yes">
-        </form>
             <button type="submit" class="btn-dark button-text" id="submit" value="Submit">Submit</button>
-            <p id="success"</p>
-        </div>
-    </div>
+            <p id="success"></p>
+        </form>
+    </section>
 </div>
 
 <footer>
-    <nav class="navbar navbar-light bg-light ">
-        <div class="container-xl">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>
-                <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Articles and Reviews</a>
-                <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">News and Events</a>
-                <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Join</a>
-                <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">About</a>
-            </div>
-        </div>
-    </nav>
+    <!--footer appended from footer.hbs-->
 </footer>
 
 
@@ -63,6 +55,7 @@
 <script src="Libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
 <script src="Libraries/handlebars/handlebars.min-v4.7.6.js"></script>
 <script src="javascript/script.js"></script>
+<script src="javascript/about.js"></script>
 
 
 </body>

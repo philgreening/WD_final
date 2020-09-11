@@ -1,7 +1,7 @@
 
 
 //jquery AJAX call to import handlebars header template into each page
-$.get('partials/events.hbs', function(eventsTemplate) {
+$.get('templates/events.hbs', function(eventsTemplate) {
     // once received, convert the raw template to a handlebars template
     var compiledEventsTemplate = Handlebars.compile(eventsTemplate);
     // compile the template with your context 'data' and set it on an element with an id

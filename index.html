@@ -7,70 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="Libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/mqj5qhb.css">
     <link rel="stylesheet" href="Style/style.css">
 </head>
 
 <body>
 <header>
-    <span id="navigation" class="sticky-top"></span>
-<!--    <nav class="navbar navbar-expand-md navbar-dark bg-dark ">-->
-<!--        <a class="navbar-brand" href="#">Film Club</a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse " id="collapsibleNavbar">-->
-<!--            <script id="menu-template" type="text/x-handlebars-template">-->
-<!--                <ul class="navbar-nav">-->
-<!--                    {{#each menu}}-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link" href="{{link}}.html">{{name}}</a>-->
-<!--                        </li>-->
-<!--                    {{/each}}-->
-<!--                </ul>-->
-<!--            </script>-->
-<!--            <span id="target"></span>-->
-<!--        </div>-->
-<!--    </nav>-->
-
+    <!--Navigation appended from header.hbs-->
+    <nav id="breadcrumb-index" aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-end mr-5">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
 </header>
 <!--feature article-->
-<!--<div class="jumbotron-fluid text-right text-light">-->
 <div class="jumbotron-fluid">
     <img src="assets/images/brooksBanner.svg" alt="Banner image of Louise Brooks">
     <blockquote class="blockquote text-right text-light">
         <h1 class=" quote-text mb-0">"There is no Garbo, there is no Dietrich,<br> there is only Louise Brooks."</h1>
-        <footer class="blockquote-footer text-light" id="cite-text">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></footer>
+        <p class="blockquote-footer text-light" id="cite-text">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></p>
         <a href="articles.html#article-container"><button type="button" class="button-text btn btn-dark">Read more</button><a/>
     </blockquote>
 </div>
-
-
-<!-- carousel HTML -->
+<!--Carousel HTML-->
 <div id="event-container">
-        <h1 class="section-font">Events</h1>
-
+    <h1 class="section-font">Events</h1>
     <div class="carousel-container">
-
         <div class="row carousel-slide-container">
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket1.svg" alt="Friendly Neighbourhood Cinema event"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket1.svg" alt="Friendly Neighbourhood Cinema event"></a>
             </div>
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket2.svg" alt="The Great British Drive In event"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket2.svg" alt="The Great British Drive In event"></a>
             </div>
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket3.svg" alt="Open City Documentary Festival event"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket3.svg" alt="Open City Documentary Festival event"></a>
             </div>
         </div>
         <div class="row carousel-slide-container">
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket4.svg" alt="Blackstar Film Festival event"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket4.svg" alt="Blackstar Film Festival event"></a>
             </div>
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket5.svg" alt="Adventures for the Bold and the Brave event"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket5.svg" alt="Adventures for the Bold and the Brave event"></a>
             </div>
             <div class="col-xl p-2">
-                <a href="https://placeholder.com"><img class="slide-image" src="assets/images/eventTicket6.svg" alt="BFI Japan 2020"></a>
+                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket6.svg" alt="BFI Japan 2020"></a>
             </div>
         </div>
 
@@ -78,15 +60,7 @@
         <a class="carousel-right" onclick="slides(1)">&#10095</a>
 
     </div>
-    </div>
 </div>
-<!--</div>-->
-<!--<div class="container">-->
-<!--    <div class="row">-->
-<!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
-<!--        <div class="container col"> <a href="https://placeholder.com"><img src="https://via.placeholder.com/500x400"></div>-->
-<!--    </div>-->
-<!--</div>-->
 <div id="review-cinema-container">
     <div class="container-xl">
         <div class="row">
@@ -105,29 +79,9 @@
         </div>
     </div>
 </div>
-<!--<footer>-->
-<!--    <nav class="navbar navbar-light bg-light ">-->
-<!--        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">-->
-<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>-->
-<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Profile</a>-->
-<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Messages</a>-->
-<!--            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Settings</a>-->
-<!--        </div>-->
-<!--    </nav>-->
-<!--</footer>-->
 
 <footer>
-    <nav class="navbar navbar-dark bg-dark ">
-        <div class="container-xl">
-        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Home</a>
-            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Articles and Reviews</a>
-            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">News and Events</a>
-            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">Join</a>
-            <a class="nav-link" id="v-pills" data-toggle="pill" href="#" role="tab" aria-controls="v-pills" aria-selected="false">About</a>
-        </div>
-        </div>
-    </nav>
+    <!--footer appended from footer.hbs-->
 </footer>
 
 

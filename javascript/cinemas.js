@@ -1,5 +1,5 @@
 //jquery AJAX call to import handlebars header template into each page
-$.get('partials/cinemas.hbs', function(cinemasTemplate) {
+$.get('templates/cinemas.hbs', function(cinemasTemplate) {
     // once received, convert the raw template to a handlebars template
     var compiledCinemasTemplate = Handlebars.compile(cinemasTemplate);
     // compile the template with your context 'data' and set it on an element with an id
