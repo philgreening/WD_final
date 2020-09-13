@@ -1,10 +1,10 @@
-var modal = document.getElementById("modal");
-var closeButton = document.getElementById("close-button");
-var openModal = document.getElementById("open-modal")
-var modalOverlay = document.getElementById("modal-overlay")
+const modal = document.getElementById("modal");
+const closeButton = document.getElementById("close-button");
+const openModal = document.getElementById("open-modal");
+const modalOverlay = document.getElementById("modal-overlay");
 
 
-    openModal.addEventListener("click", function () {
+openModal.addEventListener("click", function () {
         modal.style.display = "grid";
         modalOverlay.style.display = "block"
     });
