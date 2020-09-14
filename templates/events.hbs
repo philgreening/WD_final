@@ -1,7 +1,9 @@
+<!--Handlebars template to populate events section of newsandevents.html-->
 <section class="sub-page-container">
     <h1 class="section-font section-header">Events</h1>
     <div id="event">
         {{#each event}}
+<!--            @index iterates through events by adding number to id-->
         <div id="event-{{@index}}">
             <a href="https://{{link}}"><img class="image" src="{{image}}" alt="{{alt}}"></a>
             <div class="hide-event">

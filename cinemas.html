@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Film Club</title>
+    <head>
+        <title>Birmingham Film Club</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <meta name="description" content="Birmingham Film club. Showcasing the best events and films around the region">
+        <meta name="keywords" content="Film, Movies, Birmingham, Cinema, Local, Film Club">
+        <meta name="author" content="Phil Greening">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/styleSheet.css">
-</head>
+        <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/styleSheet.css">
+    </head>
 
-<body>
-<header>
-    <!--Navigation appended from header.hbs-->
-    <nav class="breadcrumb-nav" aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-end mr-5 ">
-            <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
-            <li class="breadcrumb-item active text-dark" aria-current="page">Local Cinemas</li>
-        </ol>
-    </nav>
-</header>
-<!--Cinema details imported from handlebars template cinemas.hbs-->
-<span id="cinemas"></span>
+    <body>
+        <header>
+            <!--Navigation appended from header.hbs-->
 
-<footer>
-    <!--footer appended from footer.hbs-->
-</footer>
+            <!--    breadcrumbs for navigation-->
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-end mr-5 ">
+                    <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-dark" aria-current="page">Local Cinemas</li>
+                </ol>
+            </nav>
+        </header>
+        <!--Cinema details imported from handlebars template cinemas.hbs-->
+        <span id="cinemas"></span>
 
-<script src="libraries/jquery/jquery-3.5.1.min.js"></script>
-<script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
-<script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
-<script src="javascript/headerFooter.js"></script>
-<script src="javascript/cinemas.js"></script>
+        <footer>
+            <!--footer appended from footer.hbs-->
+        </footer>
 
+        <!--libraries and JS to be loaded on page-->
+        <script src="libraries/jquery/jquery-3.5.1.min.js"></script>
+        <script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
+        <script src="javascript/headerFooter.js"></script>
+        <script src="javascript/cinemas.js"></script>
 
-</body>
+    </body>
 </html>

@@ -1,9 +1,11 @@
+<!--Handlebars template to populate cinema.html-->
 <section id="cinema-container">
     <h1 class="section-font section-header">Local Independent Cinemas</h1>
     {{#each cinema}}
     <div class="cinema">
         <h1 class="cinema-font">{{name}}</h1>
         <div class="cinema-description">
+<!--            showing now link points to the cinema's listings page -->
             <p><a class="text-dark " href="{{link}}"><h3>Showing now</h3></a></p>
             <p class="cinema-text">
                 <b>Address:</b><br>
@@ -15,6 +17,7 @@
             <p class="cinema-desc">{{description}}</p>
         </div>
         <div class="map">
+<!--            map embedded from google maps-->
             <iframe src="{{map}}"></iframe>
         </div>
     </div>

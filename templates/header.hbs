@@ -1,8 +1,11 @@
+<!--bootsrap classes used to style navbar-->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
-    <a class="navbar-brand" href="index.html"><img class="image"  src="assets/images/logo.png" alt="Birmingham film club logo"></a>
+<!--logo and link to home-->
+    <a class="navbar-brand" href="index.html"><img class="image" src="assets/images/logo.png" alt="Birmingham film club logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+<!--    handlebars expressions used to populate navbar from headerFooter.js -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     {{#each menu}}

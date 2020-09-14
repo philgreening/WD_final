@@ -1,4 +1,4 @@
-// <-- tell jquery to load the file as html
+//JSON data to pass into handlebars template cinemas.hbs
 const cinemaData = {
     "cinema": [
         {
@@ -52,10 +52,10 @@ const cinemaData = {
 
     ]
 };
-//jquery AJAX call to import handlebars header template into each page
+//jquery AJAX call to import handlebars cinemas.hbs template
 $.get('templates/cinemas.hbs', function(cinemasTemplate) {
-    // once received, convert the raw template to a handlebars template
+    // convert the html to a handlebars template
     const compiledCinemasTemplate = Handlebars.compile(cinemasTemplate);
-    // compile the template with your context 'data' and set it on an element with an id
+    // compile the handlebars template with data above and pass it to the target id
     $('#cinemas').html(compiledCinemasTemplate(cinemaData));
 }, 'html');

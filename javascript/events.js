@@ -1,4 +1,4 @@
-// <-- tell jquery to load the file as html
+//JSON event data to pass into handlebars template events.hbs
 const eventData = {
     "event": [
         {
@@ -69,34 +69,34 @@ const eventData = {
         },
     ]
 };
-//jquery AJAX call to import handlebars header template into each page
+//jquery AJAX call to import handlebars events.hbs template
 $.get('templates/events.hbs', function(eventsTemplate) {
-    // once received, convert the raw template to a handlebars template
+    // convert the html to a handlebars template
     const compiledEventsTemplate = Handlebars.compile(eventsTemplate);
-    // compile the template with your context 'data' and set it on an element with an id
+    // compile the handlebars template with data above and pass it to the target id
     $('#events').html(compiledEventsTemplate(eventData));
 }, 'html');
 
-
+//API call to TMDB.com to retraive JSON data for top 5 showing now films
 const api_url = `https://api.themoviedb.org/3/movie/now_playing?api_key=083752e16e6ad8d97b6edb9058118829&language=en-US&page=1&region=GB`
 async function getData() {
     const response = await fetch(api_url);
     const data = await response.json();
 
-
+    //holder for generated data received from API
     let output = ""
+    //for loop iterates through the first 5 objects retried from the API, retrieving the release date, title and overview of film
     for (let i = 0; i < 5; i++) {
         let title = data.results[i].title
         let release = data.results[i].release_date
-        let rating = data.results[i].vote_average
         let overview = data.results[i].overview
 
-
+        //add html and data together
         output += "<h5><li>" + title + "</li></h5>"
         output += "<p>" + overview + "</p>"
-        // output += "<p>" + "TMDB user rating: " + "<b>" + rating + "</b></p>"
         output += "<p><b>" + "Release date: "+ "</b>" + release + "</p>"
     }
+    //output data from API and HTML above to target ID
     document.getElementById("film-list").innerHTML = output
 }
 

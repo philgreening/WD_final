@@ -1,96 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Film Club</title>
+    <head>
+        <title>Birmingham Film Club</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <meta name="description" content="Birmingham Film club. Showcasing the best events and films around the region">
+        <meta name="keywords" content="Film, Movies, Birmingham, Cinema, Local, Film Club">
+        <meta name="author" content="Phil Greening">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.typekit.net/mqj5qhb.css">
-    <link rel="stylesheet" href="style/styleSheet.css">
-</head>
+        <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <!--    loads font for event ticket svg images. Font loaded from adobe which i have license -->
+        <link rel="stylesheet" href="https://use.typekit.net/mqj5qhb.css">
+        <link rel="stylesheet" href="style/styleSheet.css">
+    </head>
 
-<body>
-<header>
-    <!--Navigation appended from header.hbs-->
-    <nav id="breadcrumb-index" aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-end mr-5">
-            <li class="breadcrumb-item active" aria-current="page">Home</li>
-        </ol>
-    </nav>
-</header>
-<!--feature article-->
-<div class="jumbotron-fluid">
-    <img src="assets/images/brooksBanner.svg" alt="Banner image of Louise Brooks">
-    <blockquote class="blockquote text-right text-light">
-        <h1 class=" quote-text mb-0">"There is no Garbo, there is no Dietrich,<br> there is only Louise Brooks."</h1>
-        <p class="blockquote-footer text-light" id="cite-text">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></p>
-        <a href="articles.html#article-container"><button type="button" class="button-text btn btn-dark">Read more</button><a/>
-    </blockquote>
-</div>
-<!--Carousel HTML-->
-<section id="event-container">
-    <h1 class="section-font">Events</h1>
-    <div class="carousel-container">
-        <div class="row carousel-slide-container">
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket1.svg" alt="Friendly Neighbourhood Cinema event"></a>
-            </div>
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket2.svg" alt="The Great British Drive In event"></a>
-            </div>
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket3.svg" alt="Open City Documentary Festival event"></a>
-            </div>
+    <body>
+        <header>
+            <!--Navigation bar appended from header.hbs-->
+
+        <!--    breadcrumbs for navigation-->
+            <nav id="breadcrumb-index" aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-end mr-5">
+                    <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+            </nav>
+        </header>
+
+        <!--feature article container-->
+        <div class="jumbotron-fluid">
+            <img src="assets/images/brooksBanner.svg" alt="Banner image of Louise Brooks">
+        <!--    displays quote over image-->
+            <blockquote class="blockquote text-right text-light">
+                <h1 class=" quote-text mb-0">"There is no Garbo, there is no Dietrich,<br> there is only Louise Brooks."</h1>
+                <p class="blockquote-footer text-light" id="cite-text">Henri Langlois, <cite title="Cinémathèque Française">Cinémathèque Française</cite></p>
+        <!--        button link to article-->
+                <a href="articles.html#article-container"><button type="button" class="button-text btn btn-dark">Read more</button><a/>
+            </blockquote>
         </div>
-        <div class="row carousel-slide-container">
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket4.svg" alt="Blackstar Film Festival event"></a>
+        <!--Carousel HTML-->
+        <section id="event-container">
+            <h1 class="section-font">Events</h1>
+            <div class="carousel-container">
+                <div class="row carousel-slide-container">
+        <!--            contains individual carousel items-->
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket1.svg" alt="Friendly Neighbourhood Cinema event"></a>
+                    </div>
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket2.svg" alt="The Great British Drive In event"></a>
+                    </div>
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket3.svg" alt="Open City Documentary Festival event"></a>
+                    </div>
+                </div>
+                <div class="row carousel-slide-container">
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket4.svg" alt="Blackstar Film Festival event"></a>
+                    </div>
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket5.svg" alt="Adventures for the Bold and the Brave event"></a>
+                    </div>
+                    <div class="col-xl p-2">
+                        <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket6.svg" alt="BFI Japan 2020"></a>
+                    </div>
+                </div>
+        <!--Onclick handles carousel navigation. carousel code is at carousel.js-->
+                <a class="carousel-left" onclick="slides(-1)">&#10094</a>
+                <a class="carousel-right" onclick="slides(1)">&#10095</a>
+
             </div>
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket5.svg" alt="Adventures for the Bold and the Brave event"></a>
+        </section>
+        <!--section for review and cinema link and image-->
+        <section id="review-cinema-container">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-xl-6 my-4 ">
+                        <a href="articles.html"><img class="link-image" src="assets/images/reviews_unsplash.jpg" alt="Article link picture">
+        <!--                    dark overlay to enhance text on hover-->
+                            <div class="overlay"></div>
+                            <p class="title-font">ARTICLES AND REVIEWS</p>
+                        </a>
+                    </div>
+                    <div class="col-xl-6 my-4 ">
+                        <a href="cinemas.html"><img class="link-image" src="assets/images/cinema_unsplash.jpg" alt="Cinema link picture">
+                            <div class="overlay"></div>
+                            <p class="title-font">LOCAL INDEPENDENT CINEMAS</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="col-xl p-2">
-                <a href="newsandevents.html#events"><img class="slide-image" src="assets/images/eventTicket6.svg" alt="BFI Japan 2020"></a>
-            </div>
-        </div>
+        </section>
 
-        <a class="carousel-left" onclick="slides(-1)">&#10094</a>
-        <a class="carousel-right" onclick="slides(1)">&#10095</a>
+        <footer>
+            <!--footer appended from footer.hbs-->
+        </footer>
 
-    </div>
-</section>
-<section id="review-cinema-container">
-    <div class="container-xl">
-        <div class="row">
-            <div class="col-xl-6 my-4 ">
-                <a href="articles.html"><img class="link-image" src="assets/images/reviews_unsplash.jpg" alt="Article link picture">
-                    <div class="overlay"></div>
-                    <p class="title-font">ARTICLES AND REVIEWS</p>
-                </a>
-            </div>
-            <div class="col-xl-6 my-4 ">
-                <a href="cinemas.html"><img class="link-image" src="assets/images/cinema_unsplash.jpg" alt="Cinema link picture">
-                    <div class="overlay"></div>
-                    <p class="title-font">LOCAL INDEPENDENT CINEMAS</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <!--footer appended from footer.hbs-->
-</footer>
-
-
-
-<script src="libraries/jquery/jquery-3.5.1.min.js"></script>
-<script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
-<script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
-<script src="javascript/headerFooter.js"></script>
-<script src="javascript/carousel.js"></script>
-
-</body>
+        <!--libraries and JS to be loaded on page-->
+        <script src="libraries/jquery/jquery-3.5.1.min.js"></script>
+        <script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
+        <script src="javascript/headerFooter.js"></script>
+        <script src="javascript/carousel.js"></script>
+    </body>
 </html>

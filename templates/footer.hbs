@@ -1,5 +1,7 @@
+<!--bootsrap classes used to style navbar-->
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-xl">
+        <!--    handlebars expressions used to populate navigation from headerFooter.js -->
             <div class="flex-column">
                 {{#each menu}}
                     <ul class="navbar-nav">
@@ -9,6 +11,7 @@
                         </ul>
                 {{/each}}
             </div>
+<!--        column to contain social media icons-->
             <div class="flex-column">
                 <a href="https://twitter.com/"><img class="social" src="assets/images/twitter.svg" alt="Twitter icon" ></a>
                 <a href="https://facebook.com/"><img class="social" src="assets/images/facebook.png" alt="Facebook Icon"></a>

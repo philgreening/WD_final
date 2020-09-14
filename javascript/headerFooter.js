@@ -1,8 +1,6 @@
-//handlebars template for navigation bar
+//handlebars template for header and footer navigation
 
-
-// var menuTemplate = document.getElementById("menu-template").innerHTML;
-// var compiledMenuTemplate = Handlebars.compile(menuTemplate);
+//JSON event data to pass into handlebars template header.hbs and Footer.hbs
 const menuData = {
     menu: [
         {
@@ -27,20 +25,16 @@ const menuData = {
         },
     ]
 };
-//jquery AJAX call to import handlebars header template into each page
+//jquery AJAX call to import handlebars header.hbs template
 $.get('templates/header.hbs', function(menuTemplate) {
-    // once received, convert the raw template to a handlebars template
+    // convert the html to a handlebars template
     const compiledMenuTempate = Handlebars.compile(menuTemplate);
-    // compile the template with your context 'data' and set it on an element with an id
+    // compile the handlebars template with data above and pass it to the target id
     $('header').prepend(compiledMenuTempate(menuData));
-}, 'html'); // <-- tell jquery to load the file as html
+}, 'html');
 
-// document.getElementById("target").innerHTML = menuItem;
-//document.body.innerHTML += compiledMenuTemplate(menuItem);
-//Handlebars.registerPartial('header', Handlebars.template[header.hbs], )
+//same as above for footer.hbs
 $.get('templates/footer.hbs', function(menuTemplate) {
-    // once received, convert the raw template to a handlebars template
     const compiledMenuTempate = Handlebars.compile(menuTemplate);
-    // compile the template with your context 'data' and set it on an element with an id
     $('footer').append(compiledMenuTempate(menuData));
-}, 'html'); // <-- tell jquery to load the file as html
+}, 'html');

@@ -1,84 +1,80 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
-<head>
-    <title>Film Club</title>
+    <head>
+        <title>Birmingham Film Club</title>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <meta name="description" content="Birmingham Film club. Showcasing the best events and films around the region">
+        <meta name="keywords" content="Film, Movies, Birmingham, Cinema, Local, Film Club">
+        <meta name="author" content="Phil Greening">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/styleSheet.css">
-</head>
+        <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/styleSheet.css">
+    </head>
 
-<body>
-<header>
-    <!--Navigation appended from header.hbs-->
-    <nav class="breadcrumb-nav" aria-label="breadcrumb">
-        <ol class="breadcrumb justify-content-end mr-5 ">
-            <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
-            <li class="breadcrumb-item active text-dark" aria-current="page">News and Events</li>
-        </ol>
-    </nav>
-</header>
+    <body>
+        <header>
+            <!--Navigation appended from header.hbs-->
 
-<div class="page-container">
-    <section id="news-container">
-        <h1 class="section-font section-header">News</h1>
-        <div class="news-article article-1">
-            <h3>BFI Film Festival</h3>
-            <!--Article is used from BFI at https://www.bfi.org.uk/london-film-festival/news/programme-announced-->
-            <p><span class="drop-cap">T</span>he 64th BFI London Film Festival (LFF) in partnership with American Express today announced the full programme of its reimagined and innovative new 2020 offering, which will be delivered both virtually and via physical screenings.
-                Over the 12 days from 7 to 18 October, the festival will be its most accessible ever, presenting over 50 virtual premieres and a selection of highly anticipated new feature film previews at BFI Southbank as well as in cinemas across the UK, offering audiences a unique chance to engage with the festival in different ways.</p>
-            <p>With work from more than 40 countries, the programme includes fiction, documentary, animation, artists’ moving image, short film, restored classics from the world’s archives as well as previews of several episodic/series-based works made for the small screen.</p>
-            <p>Every screening will be presented with an intro or Q&A from filmmakers and programmers. The festival also includes many ways audiences can engage for free: LFF opening screenings of Mangrove in cinemas across the UK; selected feature films on BFI Player;
-                an international programme of short films featuring established and breakthrough film talents; Screen Talks with major filmmakers and actors, as well as all online salons and Q&As across the festival that will give audiences an opportunity to delve more deeply into themes and talking points emerging from the programme.</p>
+            <!--    breadcrumbs for navigation-->
+            <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-end mr-5 ">
+                    <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active text-dark" aria-current="page">News and Events</li>
+                </ol>
+            </nav>
+        </header>
+<!--        container for page grid-->
+        <div class="page-container">
+<!--            container for news articles. allows for responsive grid positioning-->
+            <section id="news-container">
+                <h1 class="section-font section-header">News</h1>
+                <div class="news-article article-1">
+                    <h3>BFI Film Festival</h3>
+                    <!--Article is used from BFI at https://www.bfi.org.uk/london-film-festival/news/programme-announced-->
+                    <p><span class="drop-cap">T</span>he 64th BFI London Film Festival (LFF) in partnership with American Express today announced the full programme of its reimagined and innovative new 2020 offering, which will be delivered both virtually and via physical screenings.
+                        Over the 12 days from 7 to 18 October, the festival will be its most accessible ever, presenting over 50 virtual premieres and a selection of highly anticipated new feature film previews at BFI Southbank as well as in cinemas across the UK, offering audiences a unique chance to engage with the festival in different ways.</p>
+                    <p>With work from more than 40 countries, the programme includes fiction, documentary, animation, artists’ moving image, short film, restored classics from the world’s archives as well as previews of several episodic/series-based works made for the small screen.</p>
+                    <p>Every screening will be presented with an intro or Q&A from filmmakers and programmers. The festival also includes many ways audiences can engage for free: LFF opening screenings of Mangrove in cinemas across the UK; selected feature films on BFI Player;
+                        an international programme of short films featuring established and breakthrough film talents; Screen Talks with major filmmakers and actors, as well as all online salons and Q&As across the festival that will give audiences an opportunity to delve more deeply into themes and talking points emerging from the programme.</p>
+                </div>
+                <div class="news-article article-2">
+                    <h3>Socrates</h3>
+                    <!--Article is used from Film wire at https://us13.campaign-archive.com/?u=80f7d218d31b967bc34517d88&id=e63d692bf5-->
+                    <p><span class="drop-cap">F</span>rom Executive Producer Fernando Meirelles ('City of God'), Alexandre Moratto’s Powerful debut presents a refreshing portrait of youth in Brazil.
+                    </p>
+                    <p>Socrates (a superb Christian Malheiros), a handsome 15-year-old, lives with his mother in São Palo. When she suddenly dies, his entire way of life is threatened.
+                        Fighting an estranged father for his mother’s ashes and a social services department that will place him in a care home if a guardian can’t be found for him, Socrates decides to take charge of his life.
+                        As a result, he meets Maicon (Tales Ordakji), who might offer a beacon of hope</p>
+                    <p><b>Socrates is released on 4 September in cinemas and on Curzon Home Cinema, BFI Player and Peccadillo Player.</b></p>
+                </div>
+                <div class="news-article article-3">
+                    <h3>Club Meeting</h3>
+                    <p><span class="drop-cap">D</span>ue to the current restrictions regarding Covid-19, club meetings are being held online monthly via zoom.
+                        Please refer to our monthly email newsletter where you will be able to vote for the film of the month and login details to access the online meeting.</p>
+                </div>
+                <div class="news-article" id="now-showing" >
+                    <h3>Now Showing</h3>
+                    <ol id="film-list">
+        <!--List appended from events.js. This is populated from the TMDB API https://developers.themoviedb.org/3/getting-started/introduction-->
+                    </ol>
+                </div>
+            </section>
+<!--            events section appended from handlebars template events.hbs-->
+            <span id="events"></span>
         </div>
-        <div class="news-article article-2">
-            <h3>Socrates</h3>
-            <!--Article is used from Film wire at https://us13.campaign-archive.com/?u=80f7d218d31b967bc34517d88&id=e63d692bf5-->
-            <p><span class="drop-cap">F</span>rom Executive Producer Fernando Meirelles ('City of God'), Alexandre Moratto’s Powerful debut presents a refreshing portrait of youth in Brazil.
-            </p>
-            <p>Socrates (a superb Christian Malheiros), a handsome 15-year-old, lives with his mother in São Palo. When she suddenly dies, his entire way of life is threatened.
-                Fighting an estranged father for his mother’s ashes and a social services department that will place him in a care home if a guardian can’t be found for him, Socrates decides to take charge of his life.
-                As a result, he meets Maicon (Tales Ordakji), who might offer a beacon of hope</p>
-            <p><b>Socrates is released on 4 September in cinemas and on Curzon Home Cinema, BFI Player and Peccadillo Player.</b></p>
-        </div>
-        <div class="news-article article-3">
-            <h3>Club Meeting</h3>
-            <p><span class="drop-cap">D</span>ue to the current restrictions regarding Covid-19, club meetings are being held online monthly via zoom.
-                Please refer to our monthly email newsletter where you will be able to vote for the film of the month and login details to access the online meeting.</p>
-        </div>
-        <div class="news-article" id="now-showing" >
-            <h3>Now Showing</h3>
-            <ol id="film-list">
-<!--                <li 1</li>-->
-<!--                <li 2</li>-->
-<!--                <li 3</li>-->
-<!--                <li 4</li>-->
-<!--                <li 5</li>-->
-<!--                <li 6</li>-->
-<!--                <li 7</li>-->
-<!--                <li 8</li>-->
-<!--                <li 9</li>-->
-<!--                <li 10</li>-->
-            </ol>
-        </div>
-    </section>
-    <span id="events"></span>
 
-</div>
+        <footer>
+        <!--footer appended from footer.hbs-->
+        </footer>
 
-<footer>
-<!--footer appended from footer.hbs-->
-</footer>
+        <!--libraries and JS to be loaded on page-->
+        <script src="libraries/jquery/jquery-3.5.1.min.js"></script>
+        <script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
+        <script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
+        <script src="javascript/headerFooter.js"></script>
+        <script src="javascript/events.js"></script>
 
-
-<script src="libraries/jquery/jquery-3.5.1.min.js"></script>
-<script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
-<script src="libraries/handlebars/handlebars.min-v4.7.6.js"></script>
-<script src="javascript/headerFooter.js"></script>
-<script src="javascript/events.js"></script>
-
-
-</body>
+    </body>
 </html>

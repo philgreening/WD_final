@@ -1,5 +1,4 @@
-//review box
-
+//JSON event data to pass into handlebars template reviews.hbs
 const filmData = {
     "film": [
         {
@@ -58,20 +57,24 @@ const filmData = {
         },
     ]
 };
-//jquery AJAX call to import handlebars header template into each page
+//jquery AJAX call to import handlebars reviews.hbs template
 $.get('templates/reviews.hbs', function(reviewTemplate) {
-    // once received, convert the raw template to a handlebars template
+    // convert the html to a handlebars template
     const compiledReviewTemplate = Handlebars.compile(reviewTemplate);
-    // compile the template with your context 'data' and set it on an element with an id
+    // compile the handlebars template with data above and pass it to the target id
     $('#reviews').html(compiledReviewTemplate(filmData));
-}, 'html'); // <-- tell jquery to load the file as html
+}, 'html');
 
+//Function to display review article on click of button. Uses object
+// index with handlebars template to select correct review
 function changeText(n) {
     document.getElementById("review-text-container").innerHTML = filmData.film[n].review;
     const reviewText = document.getElementById("review-text-container");
+    //open box when clicked
     if (reviewText.style.display !== "block") {
         reviewText.style.display = "block";
     } else {
+        //close box onclick if open
         reviewText.style.display = "none";
     }
 }
