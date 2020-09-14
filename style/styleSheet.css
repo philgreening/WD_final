@@ -1,14 +1,14 @@
 * {
     box-sizing:border-box
 }
-/*---------------------CSS for all pages--------------------*/
+/********************CSS for all pages********************/
 /*load font for headings */
 @font-face {
     font-family: "Manifesto";
     font-weight: bold;
     src: url("../assets/fonts/MANIFESTO.ttf") format("truetype");
 }
-
+/*Media queries to handle responsive text size*/
 @media screen and (min-width: 300px) {
     .quote-text{
         font-size:calc(10px + (40 - 10) * ((100vw - 320px)/ (1600 - 300)));
@@ -29,9 +29,11 @@
         font-size:calc(20px + (30 - 20) * ((100vw - 320px)/ (1600 - 300)))
     }
 }
+/*padding to top of page so fixed nav doesnt cover breadcrumbs */
 body{
     padding-top: 55px;
 }
+
 .drop-cap{
     font-size: 300%;
     font-family: Manifesto, serif;
@@ -39,57 +41,51 @@ body{
     padding-right: 5px;
     line-height: 100%;
 }
+
 .section-header{
     grid-column: 2/6;
     grid-row: 1;
 }
+
 .section-font{
     font-family: Manifesto, serif;
-    /*font-size: 60px;*/
     padding: 20px;
     color: black;
     text-align: center;
-    /*box-shadow: 3px 3px 5px 6px #d39e00;*/
 }
+/* keeps images responsive*/
 .image{
     width: 100%;
     max-height: 100%;
 }
+
 .social{
     float:right;
     margin: 1em;
     width: 40px;
     height: 40px;
 }
+
 .social:hover{
     background-color: grey;
 }
+/*breadcrumbs colour for index page */
 #breadcrumb-index, #breadcrumb-index > ol{
     background-color: black;
 }
 .breadcrumb-nav > ol, #breadcrumb-index > ol{
     margin-bottom: 0;
 }
+/*breadcrumbs colour for all other pages */
 .breadcrumb-nav, .breadcrumb-nav > ol{
     background-color: #ba8b00;
 }
 
-/*img{*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    height: auto%;*/
-/*}*/
-
-/*hr{*/
-/*    width: 50%;*/
-/*    justify-self: center;*/
-/*    !*box-shadow: 3px 3px 5px 6px #d39e00 ;*!*/
-
-/*}*/
-/*--------------------Index css--------------------*/
+/********************Index css*********************/
 .jumbotron-fluid{
     position: relative;
 }
+/* to position quote and animate fade transition*/
 .blockquote {
     position: absolute;
     top: 50%;
@@ -98,6 +94,7 @@ body{
     animation-name: fade;
     animation-duration: 5s;
 }
+
 @keyframes fade {
     from{opacity: 0}
     to{opacity: 1}
@@ -106,27 +103,26 @@ body{
 #event-container{
     background-color: #ba8b00;
 }
-
+/*overlays text and opacity over review and cinema boxes*/
 .overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 15px;
     right: 15px;
-    /*height: 100%;*/
-    /*width: 100%;*/
     opacity: 0;
     transition: .5s ease;
     background-color: #000000;
 }
+
 .col-xl-6 :hover .overlay{
     opacity: 70%;
     box-shadow: 3px 3px 5px 6px black;
 
 }
+
 .title-font {
     font-family: Manifesto, serif;
-    /*font-size: 40px;*/
     color: #ffffff;
     position: absolute;
     text-align: center;
@@ -134,31 +130,24 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-/*carousel css*/
+/***carousel css***/
+/*carousel css make the carousel container responsive with a max width*/
 .carousel-container{
     display: block;
     overflow: hidden;
     max-width: 1200px;
     position: relative;
     margin: auto;
-    /*background: #1e7e34;*/
 }
-
+/*carousel fade animation when navigation clicked*/
 .carousel-slide-container{
     display: block;
-    /*width: 100%;*/
-    /*max-width: 1200px;*/
     margin: 40px;
     padding-bottom: 10px;
     animation-name: fade;
     animation-duration: 2s;
-    /*position: relative;*/
-    /*background: #0f6674;*/
-  /*  animation-duration: 2s;
-    animation-name: slidein;*/
 }
-
+/*handles the positioning of the carousel navigation arrows*/
 .carousel-left, .carousel-right{
     cursor: pointer;
     position: absolute;
@@ -182,13 +171,15 @@ body{
 #review-cinema-container{
     background-color: #721c24;
 }
+/*sizes the images for the reviews and cinema links*/
 .link-image{
         display: block;
         width: 100%;
         height: auto;
 }
 
-/*--------------------articles css--------------------*/
+/*********************articles css*********************/
+/*creates the grid for the main article*/
 #article-container{
     display: grid;
     grid-template-columns:repeat(6,1fr);
@@ -197,20 +188,13 @@ body{
     padding: 1em;
 }
 
-/*.section-header-article{*/
-/*    grid-column: 2/6;*/
-/*    grid-row: 1;*/
-/*}*/
 .article{
-    /*display: grid;*/
-    /*grid-template-columns: 1fr 2fr;*/
-    /*grid-gap: 1em;*/
-    /*padding: 1em;*/
     grid-column: 2/6;
     grid-row: 2;
     padding: 10px;
     background-color: rgba(255, 254, 254, 0.2);
 }
+/*positions and creates the round image on feature article*/
 .article-img-float{
     position: relative;
     grid-column: 2/6;
@@ -219,40 +203,28 @@ body{
     border-radius: 50%;
     shape-outside: circle(50%);
 }
-
+/*zoom effect when hovering over ticket or carousel controls*/
 .article-img-float:hover, .carousel-right:hover, .carousel-left:hover, .slide-image:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
-
+/*for the modal when clicked*/
 #modal {
-
     display: none;
-
-    /* Probably need media queries here */
     width: 600px;
     max-width: 100%;
-
     height: 425px;
     max-height: 100%;
-
+    /*positioning the modal and giving a depth effect*/
     position: fixed;
-
     z-index: 100;
-
     left: 50%;
     top: 50%;
-
-    /* Use this for centering if unknown width/height */
     transform: translate(-50%, -50%);
-
-    /* If known, negative margins are probably better (less chance of blurry text). */
-    /* margin: -200px 0 0 -200px; */
-
     background-color: #c7a133;
     box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
 }
-
+/*creates a dark background overlay when modal is clicked*/
 #modal-overlay {
     display: none;
     position: fixed;
@@ -261,9 +233,9 @@ body{
     width: 100%;
     height: 100%;
     z-index: 50;
-
     background: rgba(0, 0, 0, 0.6);
 }
+
 #modal-content{
     position: absolute;
     top: 0;
@@ -273,38 +245,33 @@ body{
     overflow: auto;
     padding: 20px 50px 20px 20px;
 }
+/*styles the list inside the modal*/
 .bio-list li{
     list-style-type: none;
     padding: 5px;
 }
-/*.article-text{*/
-/*    grid-column: 2/6;*/
-/*    !*grid-row: 2;*!*/
-/*}*/
+/*creates the grid for the reviews*/
 .review-container{
     display: grid;
     grid-template-columns:repeat(6,1fr);
-    /*grid-template-rows: repeat(3,auto);*/
     grid-gap: 1em;
     background-color: #721c24;
     padding: 1em;
 }
-
+/*creates subgrid to hold reviews*/
 #review-content{
-    /*position: relative;*/
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    /*grid-gap: 1em;*/
     grid-column-gap: 1em;
     grid-column: 2/6;
-
 }
+/*positions reviews*/
 .review-item1, .review-item2, .review-item3, .review-item4 {
     position: relative;
     display: grid;
 
 }
-
+/*overlay styling so text appears on hover*/
 .overlay-review {
     position: absolute;
     height: 100%;
@@ -334,19 +301,20 @@ body{
     transform: translate(-50%, -50%);
 }
 
-
+/*styling for the box that contains the review text when clicked*/
 #review-text-container{
     display: none;
     grid-column: 2/6;
     grid-row: 3;
     background-color: rgba(255, 254, 254, 0.50);
 }
-#review-text-container > p{
 
+#review-text-container > p{
     padding: 20px 20px 0 ;
 }
 
-/*--------------------News and Events CSS--------------------*/
+/*********************News and Events CSS*********************/
+/*creates the grid for the page*/
 .page-container{
     display: grid;
     grid-template-columns:repeat(6,1fr);
@@ -358,6 +326,7 @@ body{
     text-align: center;
     padding: 20px;
 }
+/*creates the subgrid for the news container*/
 #news-container{
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -366,6 +335,7 @@ body{
     background-color: #ba8b00;
     padding: 1em;
 }
+/*positioning of the news articles*/
 .article-1 {
     grid-column: 2/4;
     grid-row: 2/4;
@@ -378,18 +348,21 @@ body{
     grid-column: 4/5 ;
     grid-row: 3/4;
 }
+/*positioning of the now showing list from API*/
 #now-showing{
     grid-column: 5/6;
     grid-row: 2/4;
 }
+/*creates a lighter box for the text to be readable*/
 .article-1, .article-2, .article-3, #now-showing{
     background-color: rgba(255, 254, 254, 0.2);
     padding: 10px;
 }
+/*positioning of the events section*/
 #events{
     grid-column: 1/7;
 }
-
+/*subgrid created for positioning of events*/
 .sub-page-container{
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -398,6 +371,7 @@ body{
     background-color: #721c24;
     padding: 1em;
 }
+
 #event{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -405,18 +379,21 @@ body{
     grid-column: 2/6;
     padding: 1em;
 }
+/*positioning of events on grid*/
 #event-0, #event-3{
     grid-column: 1;
 
 }
+
 #event-1, #event-4{
     grid-column:2;
 
 }
+
 #event-2, #event-5 {
     grid-column: 3;
 }
-
+/*displays event info on event hover*/
 .hide-event{
     display: none;
 }
@@ -429,16 +406,16 @@ body{
 
 }
 
-/*--------------------Cinema CSS--------------------*/
+/*********************Cinema CSS*********************/
+/*creates grid for page */
 #cinema-container{
     display: grid;
     grid-template-columns:repeat(6, 1fr);
     grid-gap: 1em;
     background-color: #ba8b00;
     padding: 1em;
-
 }
-
+/*creates subgrid for cinema info and map*/
 .cinema{
     display: grid;
     grid-template-columns:2fr 1fr;
@@ -457,6 +434,10 @@ body{
     color: black;
     text-align: center;
 }
+.cinema-link{
+    position: relative;
+}
+/*positions map*/
 .map{
     overflow: hidden;
     position: relative;
@@ -465,6 +446,7 @@ body{
     grid-row: 2;
     grid-column: 2;
 }
+
 .map > iframe{
     left: 0;
     top: 0;
@@ -472,8 +454,8 @@ body{
     width: 100%;
     position: absolute;
 }
-/*--------------------About CSS--------------------*/
-
+/********************About CSS*********************/
+/*positioning about article on grid*/
 .about-container{
     grid-column: 2/6;
     padding: 1em;
@@ -482,7 +464,7 @@ body{
     background-color: rgba(255, 254, 254, 0.2);
     padding: 20px;
 }
-
+/*positioning of join form*/
 form{
     display: grid;
     background-color: rgba(255, 254, 254, 0.50);
@@ -490,10 +472,8 @@ form{
     grid-column: 2/6;
     grid-gap: 1em;
     padding: 2em;
-    /*max-width: 100%;*/
-
 }
-
+/*styling of input items on form*/
 input[type=text], input[type=email]{
     width: 100%;
     padding: 12px;
@@ -510,130 +490,48 @@ label{
     grid-column: 1;
     text-align: left;
 }
+/*********************Media queries for responsive pages--for all pages********************/
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .article{
+    /*article and review page responsive grid position*/
+    .section-header, .article, #review-text-container, #review-content{
         grid-column: 1/7;
-    }
-    #news-container > div{
-        grid-column: 1/7;
-    }
-    #event, #event > div{
-        grid-column: 1/7;
-    }
-    .section-header{
-    grid-column: 1/7;
-    }
-    .cinema, .about-container, form{
-        grid-column: 1/7;
-    }
-    .map{
-        grid-column: 1/3;
-        grid-row: 3;
-    }
-    .cinema-description, .cinema-font{
-        grid-column: 1/3;
     }
 
-    #review-text-container, #review-content{
-        grid-column: 1/7;
-    }
     #review-content > div{
         grid-column: 1/5;
     }
 
     .button-container1, .button-container2, .button-container3, .button-container4 {
-        /*grid-column: 1/7;*/
         padding-bottom: 20px;
     }
 
     #modal{
         max-width: 90%;
     }
-    #now-showing{
-        display: none;
+    /*news and event page responsive grid position*/
+    #news-container > div, #event, #event > div{
+        grid-column: 1/7;
     }
+
     .article-1{
         grid-row: 2;
     }
+
     .article-2{
         grid-row: 3;
     }
+
     .article-3{
         grid-row: 4;
     }
-    form{
-        grid-template-columns: 1fr
-    }
 
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 601px) {
-    .article, #review-content, #review-text-container{
-        grid-column: 1/7;
-    }
-    .section-header{
-        grid-column: 1/7;
-    }
-    .review-item1, .review-item3, .button-container1, .button-container3 {
-        grid-column: 1/3;
-    }
-    .review-item1,.review-item2{
-        grid-row: 1;
-    }
-    .review-item3, .review-item4{
-        grid-row: 3;
-    }
-    .button-container1, .button-container2 {
-        grid-row: 2;
-        padding-bottom: 20px;
-    }
-    .review-item2,.review-item4, .button-container2, .button-container4 {
-        grid-column: 3/5;
-    }
-    .button-container3,.button-container4 {
-        grid-row: 4;
-        padding-bottom: 20px;
-    }
-    #news-container, .article-1{
-        grid-column: 1/7;
-    }
-    .article-1{
-        grid-row: 2;
-    }
-    .article-2, .article-3{
-        grid-row: 3;
-    }
-    .article-2{
-        grid-column: 1/4;
-    }
-    .article-3{
-        grid-column: 4/7;
-    }
+    /*hide top 5 when on small screens*/
     #now-showing{
         display: none;
     }
-    #event{
-        grid-column: 1/7;
-        grid-template-columns: repeat(4,1fr);
-    }
-    #event-0,#event-1{
-        grid-row: 1;
-    }
-    #event-2,#event-3{
-        grid-row: 2;
-    }
-    #event-4, #event-5{
-        grid-row: 3;
-    }
-    #event-0, #event-2, #event-4{
-        grid-column: 1/3;
-    }
-    #event-1, #event-3, #event-5{
-        grid-column: 3/5;
-     }
+    /*cinema and about page responsive grid position*/
     .cinema, .about-container, form{
         grid-column: 1/7;
     }
@@ -642,18 +540,119 @@ label{
         grid-column: 1/3;
         grid-row: 3;
     }
+
     .cinema-description, .cinema-font{
         grid-column: 1/3;
     }
+
+    form{
+        grid-template-columns: 1fr
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+    /*responsive positioning of review page*/
+    .section-header, .article, #review-content, #review-text-container{
+        grid-column: 1/7;
+    }
+
+    .review-item1, .review-item3, .button-container1, .button-container3 {
+        grid-column: 1/3;
+    }
+
+    .review-item1,.review-item2{
+        grid-row: 1;
+    }
+
+    .review-item3, .review-item4{
+        grid-row: 3;
+    }
+
+    .button-container1, .button-container2 {
+        grid-row: 2;
+        padding-bottom: 20px;
+    }
+
+    .review-item2,.review-item4, .button-container2, .button-container4 {
+        grid-column: 3/5;
+    }
+
+    .button-container3,.button-container4 {
+        grid-row: 4;
+        padding-bottom: 20px;
+    }
+    /*responsive positioning of news articles*/
+    #news-container, .article-1{
+        grid-column: 1/7;
+    }
+
+    .article-1{
+        grid-row: 2;
+    }
+
+    .article-2, .article-3{
+        grid-row: 3;
+    }
+
+    .article-2{
+        grid-column: 1/4;
+    }
+
+    .article-3{
+        grid-column: 4/7;
+    }
+    /*hides pot 5 on small screens*/
+    #now-showing{
+        display: none;
+    }
+    /*responsive positioning of events */
+    #event{
+        grid-column: 1/7;
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    #event-0,#event-1{
+        grid-row: 1;
+    }
+
+    #event-2,#event-3{
+        grid-row: 2;
+    }
+
+    #event-4, #event-5{
+        grid-row: 3;
+    }
+
+    #event-0, #event-2, #event-4{
+        grid-column: 1/3;
+    }
+
+    #event-1, #event-3, #event-5{
+        grid-column: 3/5;
+     }
+    /*cinema and about page responsive grid position*/
+    .cinema, .about-container, form{
+        grid-column: 1/7;
+    }
+
+    .map{
+        grid-column: 1/3;
+        grid-row: 3;
+    }
+
+    .cinema-description, .cinema-font{
+        grid-column: 1/3;
+    }
+    /*responsive positioning of form*/
     form{
         grid-template-columns: 1fr 3fr;
     }
-    form > p{
+
+    form > p, button[type=submit]{
         grid-column: 2;
     }
-    button[type=submit]{
-        grid-column: 2;
-    }
+
     label{
         text-align: right;
     }
@@ -661,21 +660,22 @@ label{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+    /*responsive positing of large article on article page*/
     .article-1{
         grid-column: 1/5;
     }
-
+    /*displays top 5 on larger screens*/
     #now-showing{
         display: grid;
         grid-column: 5/7;
         grid-row: 2;
     }
-
+    /*responsive positioning of cinema page*/
     .map{
         grid-column: 2/3;
         grid-row: 2;
     }
+
     .cinema-description, .cinema-font{
         grid-column: 1/2;
     }
@@ -686,20 +686,23 @@ label{
     .section-header{
         grid-column: 2/6;
     }
-
+    /*responsive positioning on review and article page*/
     .review-item1, .review-item2, .review-item3, .review-item4 {
         grid-row: 1;
     }
+
     .review-item1, .button-container1{
         grid-column: 1;
-
     }
+
     .review-item2, .button-container2{
         grid-column: 2;
     }
+
     .review-item3, .button-container3{
         grid-column: 3;
     }
+
     .review-item4, .button-container4{
         grid-column: 4;
     }
@@ -707,50 +710,53 @@ label{
     .button-container1, .button-container2, .button-container3, .button-container4 {
         grid-row: 2;
     }
+
+    /*responsive positioning for news and events page*/
     .article-2{
         grid-column: 1/3;
     }
+
     .article-3{
         grid-column: 3/5;
     }
+
     #now-showing{
         display: grid;
         grid-column: 5/7;
         grid-row: 2/4;
     }
+
     #event{
         grid-column: 1/7;
         grid-template-columns: repeat(3,1fr);
     }
+
     #event-0, #event-3{
         grid-column: 1;
     }
+
     #event-1, #event-4{
         grid-column:2;
     }
+
     #event-2, #event-5 {
         grid-column: 3;
     }
+
     #event-0, #event-1, #event-2{
         grid-row: 1;
     }
+
     #event-3, #event-4, #event-5{
         grid-row: 2;
     }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
-    .article, #review-content, #review-text-container{
+    /*responsive positioning for all containers*/
+    .article, #review-content, #review-text-container,
+    #news-container, #event, .cinema, .about-container, form {
         grid-column:2/6;
     }
-    #news-container,#event{
-        grid-column: 2/6;
-    }
-    .cinema, .about-container, form{
-        grid-column: 2/6;
-    }
-
 }
