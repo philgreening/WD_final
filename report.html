@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+
+    <meta name="author" content="Phil Greening">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="libraries/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Philip Greening</h1>
+        <h3>Web Development Report</h3>
+        <br>
+        <h2>Introduction</h2>
+        <p>The objective of my project was to develop a website for a local film club. The purpose of the website is to act as a ‘public face’ for the film club, which aims to bring together people within Birmingham who love film and to promote local film events and venues. The website is designed to act as a community resource for both film club members and the wider community within Birmingham, hosting information about local events and venues, and news and reviews on the wider topic of film.</p>
+        <h2>State 3 things that have inspired you when creating your website</h2>
+        <p>A key inspiration for the design of the website has been independent, art house and classic film. The choice of heading fonts, and the use of gold as a background colour, were inspired by 1920s-1930s art deco styles, and by the ‘intertitle’&nbsp;(text) cards used in silent film. The choice of burgundy as a background colour was inspired by classic cinema interiors, and by its prevalence in the textiles for cinema seating and curtains.</p>
+        <p>The subject matter of the project, and website content, was inspired by local film organisations in Birmingham, such as Flatpack Film Festival, who are featured on the site. I was inspired to reflect and celebrate the vibrancy of the local film community. The art deco style of my design was also chosen to reflect the heritage and deco look of local film organisations such as the Electric Cinema (who &nbsp;also adopts an art deco style) and Flatpack Festival (whose brand has a timeless look).</p>
+        <p>Popular film websites, such as IMDB, Metacritic and Rotten Tomatoes, also acted as a source of inspiration. A review of these websites identified that they rely on a mixture of user generated content, alongside other information (such as critic&nbsp;reviews) which are obtained from other sources via the use of API calls, and other methods. Various comparable sites, such as The Movie Database, freely share their data for non commercial uses via their own API. Inspired by this approach to content generation, and by the prevalence of content sharing, I designed a site with a mixture of locally managed content, and content obtained via API.</p>
+        <h2>State 3 ways in which your site is accessible</h2>
+        <p>To support accessibility, all images used on the site use the ‘alt’ text labels to describe the image and its purpose so that it can be read by screen reader software.</p>
+        <p>The contact form on the ‘About’ page uses labels on every input box and checkbox, to ensure that users of screen reading software are able to identify the form and to support the input of valid information.</p>
+        <p>The website is keyboard friendly and navigation areas and buttons can be accessed using the tab key. Aria landmarks have been added on main navigable areas to help clearly define the content on the page</p>
+        <h2>State 3 ways in which you have considered usability in your site</h2>
+        <p>The website has a fully responsive layout with breakpoints at the most commonly used widths and down to small mobile devices at 300px. Four of the site’s pages use css grid for the layout, and at the larger screen breakpoints (for desktop and laptops) the site uses multiple columns to organise the content. On the smaller breakpoints, the content transforms to display in a more linear display, and at the lowest breakpoint a single column layout is used with each element displayed below the previous section.</p>
+        <p>Each page on the website has been divided into clearly divided sections. Headings have been used to highlight content, and text overlays have been used to clearly display information and context when the user hovers over the element. A change in background contrast has been used where there are articles with large amounts of text, making it easier to read the content</p>
+        <p>Media queries were used to make the text in the website responsive. The text uses minimum and maximum values which calculate the size of the text with the width of the display. This makes the site much more user friendly on mobile devices.</p>
+        <h2>State 3 things you had to learn/find out by yourself when creating your site, and describe how you did that</h2>
+        <p>One of the areas of learning I undertook on this project was how to use templating systems to reuse code and split the templates into separate files. To do this, I used handlebars to create the templates and split them into separate .hbs files. My challenge was them to append these to target DOM elements. Following online research, I chose to use JQuery to create an AJAX call using the ‘get’ function to compile and import the separate templates created with handlebars. Using this method, I was able to reuse the header and footer for each page and also keep my other handlebars templates separate from my main html pages.</p>
+        <p>Based on my inspiration sources, I wanted some of my website content to be provided dynamically from an outside source, and needed to learn how to deliver this. Based on both available content, and required content for my site, I determined that list content (such as movie listings or top rated films) would be suitable. I reviewed several major websites to identify whether they had APIs that could be used for non-commercial purposes. A number of APIs (such as the API supplied by IMDB) were only available for commercial use, but I finally decided on the Movie Database API (themoviedb.org) as the API was well documented and can be used for free.</p>
+        <p>Initially, I attempted to connect to the API using a fetch request using promises to request access to the specific data elements, however this didn’t work as well as I intended as data received was partial. Following further research, I used an ‘async’ function with ‘await’ and ‘fetch’ to request the data and then receive the response in JSON format. Once the data was being correctly logged to the console, I iterated through and limited the results, using a ‘for’ loop to retrieve the selected fields for the top 5 items and store these in a variable. The contents of the variable were then appended to the target id in the DOM.</p>
+        <p>Finally, I wanted to learn how to use javascript to manipulate the DOM. I was able to do this by using event listeners and use the ‘click’ method to display previously hidden content. An example of this is the mosal used on the ‘Articles’ page where, when the article image is clicked, a modal is displayed and overlaid on the article and closes when the close button is clicked. The click triggers the function to change the display properties of the DOM element.</p>
+        <h2>What aspect(s) of your work do you think worked well and why?</h2>
+        <p>I was able to use handlebars templates to good effect to repeat html elements and also use javascript to iterate through the data. This worked particularly well on the ‘Events’ page, where I was able to add the data to each event element using the index of the data. Additionally, importing the handlebars templates into the html helped keep my code clear and manageable.</p>
+        <p>The responsive elements on my site work well and the site is responsive down to 300px. The layout flows well and is optimized using popular breakpoint widths combined with CSS grid to achieve this. The min and max values on the text of the site also work well and help the text become more readable on the targeted devices.</p>
+        <p>I also think the data on the API call works well, allowing regularly refreshed external content to be displayed and automatically updated on the site by the API.</p>
+        <h2>What aspect(s) of your work could be improved, and how might you do things differently another time?</h2>
+        <p>With additional time, one aspect of my site that I would improve would be to keep HTML, script and data separate. Javascript content is kept separate with the exception of one instance of the carousel ‘onclick’ function which is used inline within the html, since this didn’t function correctly when using event listeners in the javascript file. JSON data is kept within the relevant javascript file, however on a larger site, it may be more manageable to hold this data in separate files following a consistent naming format.</p>
+        <p>I employed limited use of Bootstrap for the site’s buttons, navigation and home page, in order to gain experience of a css library, however, I mainly used CSS to create the style and layout of the website. While I was able to style the website, and make it responsive, using CSS, I wrote over 700 lines of CSS to achieve this and on a larger site this would quickly become unmanageable. The use of a CSS library, and manipulating elements within that with custom CSS, would be an acceptable solution to deliver a personalised website with cross-browser compatibility.</p>
+        <p>With additional time, I would also improve how my homepage carousel works. I had initially intended the carousel to contain six slides which would move in a conveyer belt style one by one, however, I could not get the carousel to function in the way intended within the timeframe. To achieve the project on time, I adopted a carousel with six images within two slides, with one slide displaying when the controls are clicked.</p>
+        <h2>What resources were used when creating your work?</h2>
+        <br>
+        <h3>Libraries and other tools</h3>
+        <ul>
+            <li>[1] `Handlebars.js`, [online]. Available: <a href="https://handlebarsjs.com">https://handlebarsjs.com/</a>.</li>
+            <li>[2] `Bootstrap`, [online]. Available: <a href="https://getbootstrap.com">https://getbootstrap.com/</a></li>
+            <li>[3] `JQuery`, [online]. Available: <a href="https://jquery.com">https://jquery.com/</a></li>
+            <li>[4] `Webstom IDE`, [online]. Available: <a href="https://www.jetbrains.com/webstorm">https://www.jetbrains.com/webstorm/</a></li>
+            <li>[5] `Adobe XD`, [online]. Available: <a href="https://www.adobe.com/uk/products/xd.html">https://www.adobe.com/uk/products/xd.html</a></li>
+            <li>[6] `Adobe Illustrator`, [online]. Available: <a href="https://www.adobe.com/uk/products/illustrator.html">https://www.adobe.com/uk/products/illustrator.html</a></li>
+        </ul>
+        <h3>References</h3>
+        <ul>
+            <li>[7] D. Shiffman, `1.4: JSON - Working with Data and APIs in JavaScript`, [online]. Available: <a href="https://www.youtube.com/watch?v=uxf0--uiX0I">https://www.youtube.com/watch?v=uxf0--uiX0I</a>. [Accessed 11- Sept- 2020].</li>
+            <li>[8] Handlebarsjs.com, 'Handlebars Introduction’, 2020. [Online]. Available: <a href="https://handlebarsjs.com/guide">https://handlebarsjs.com/guide</a>. [Accessed: 15- Aug- 2020].</li>
+            <li>[9] W3Schools, `Bootstrap 4 get started`, 2020. [online]. Available: <a href="https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp">https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp</a>. [Accessed 15- Aug- 2020].</li>
+            <li>[10] J. Ducket, `Javascript & JQuery: Interactive front-end web development`, 2014. [book]</li>
+            <li>[11] CSS Tricks, `A complete guide to Grid`, 2020. [online]. Available: <a href="https://css-tricks.com/snippets/css/complete-guide-grid">https://css-tricks.com/snippets/css/complete-guide-grid/</a>. [Accessed 20- Aug- 2020].</li>
+            <li>[12] The Movie Database ‘ The Movie Database API’, 2020. [online]. Available: <a href="https://developers.themoviedb.org/3/movies/get-now-playing">https://developers.themoviedb.org/3/movies/get-now-playing</a>. [Accessed 12- Sept- 2020]</li>
+        </ul>
+        <h3>Content</h3>
+        <ul>
+            <li>[13] `Louise Brooks Society`, 2020. [online]. Available: <a href="//www.pandorasbox.com">https://www.pandorasbox.com/</a>. [Accessed 31- Aug- 2020].</li>
+            <li>[14] Flatpack, `Filmwire: August & September 2020`, 2020. [online]. Available: <a href="https://us13.campaign-archive.com/?u=80f7d218d31b967bc34517d88&id=e63d692bf5">https://us13.campaign-archive.com/home/?u=80f7d218d31b967bc34517d88&amp;id=50e2d8ca87</a>. [Accessed 29- Aug- 2020].</li>
+            <li>[15] ‘The Great British Drive In`, 2020. [online]. Available: <a href="https://www.thegbdrivein.com/whats-on">https://www.thegbdrivein.com/whats-on</a>. [Accessed 5- Sept- 2020].</li>
+            <li>[16] ‘The Friendly Neighbourhood Cinema`, 2020. [online]. Available: <a href="https://www.friendlyneighbourhoodcinema.co.uk">https://www.friendlyneighbourhoodcinema.co.uk/</a>. [Accessed 5- Sept 2020].</li>
+            <li>[17] ‘Blackstar Film festival`, 2020. [online]. Available: <a href="https://www.blackstarfest.org">https://www.blackstarfest.org/</a>. [Accessed 5- Sept- 2020]</li>
+            <li>[18] ‘Open City Documentary Festival`, 2020. [online]. Available: <a href="https://opencitylondon.com/2020-festival">https://opencitylondon.com/2020-festival/</a>. [Accessed 5- Sept- 2020]</li>
+            <li>[19] Flatpack, `Adventures for the Bold and the Brave`, 2020. [online]. Available: <a href="https://flatpackfestival.org.uk/event/adventures-for-the-bold-and-brave">https://flatpackfestival.org.uk/event/adventures-for-the-bold-and-brave</a>. [Accessed 5- Sept- 2020.</li>
+            <li>[20] BFI, `BFI: Japan 2020`, 2020. [online]. Available: <a href="https://www2.bfi.org.uk/japan">https://www2.bfi.org.uk/japan</a>. [Accessed 5- Sept- 2020]</li>
+            <li>[21] BFI, `BFI: Film Festival`, 2020. [online]. Available: <a href="https://www.bfi.org.uk/london-film-festival">https://www.bfi.org.uk/london-film-festival</a>. [Accessed 5- Sept- 2020]</li>
+        </ul>
+        <h3>Code</h3>
+        <ul>
+            <li>[22] C. Coyler, `Considerations for Styling a Modal`, 2018. [Source Code]. <a href="https://css-tricks.com/considerations-styling-modal">https://css-tricks.com/considerations-styling-modal/</a>.</li>
+            <li>[23] W3Schools ‘How to - Slideshow`, 2020. [Source Code]. <a href="https://www.w3schools.com/howto/howto_js_slideshow.asp">https://www.w3schools.com/howto/howto_js_slideshow.asp</a></li>
+        </ul>
+        <br>
+        <h2>Appendices</h2>
+        <br>
+        <h3>Site Map</h3>
+        <ul>
+            <li><a href="report/siteMap/sitemap.pdf">Site map</a> </li>
+        </ul>
+        <h3>Wireframes</h3>
+        <h4>Full size</h4>
+        <ul>
+            <li><a href="report/wireframes/page1_Index.pdf">Index - Page 1</a></li>
+            <li><a href="report/wireframes/page2_ArticlesAnd%20Reviews.pdf">Articles and Reviews - Page 2</a></li>
+            <li><a href="report/wireframes/page3_NewsAndEvents.pdf">News and Events - Page 3</a></li>
+            <li><a href="report/wireframes/page4_Cinemas.pdf">Cinemas - Page 4</a></li>
+            <li><a href="report/wireframes/page5_About.pdf">About - Page 5</a></li>
+        </ul>
+        <h4>Mobile view</h4>
+        <ul>
+            <li><a href="report/wireframes/mobile_Page1_Index.pdf">Index - Page 1 - Mobile</a></li>
+            <li><a href="report/wireframes/mobile_Page2_ArticlesAnd%20Reviews.pdf">Articles and Reviews - Page 2 - Moblie</a></li>
+            <li><a href="report/wireframes/mobile_Page3_NewsAndEvents.pdf">News and Events - Page 3 - Mobile</a></li>
+            <li><a href="report/wireframes/mobile_Page4_CInema.pdf">Cinemas - Page 4 - Mobile</a></li>
+            <li><a href="report/wireframes/mobile_Page5_About.pdf">About - Page 5 - Mobile</a></li>
+        </ul>
+        <h3>Mockups</h3>
+        <h4>Full size</h4>
+        <ul>
+            <li><a href="report/mockups/homeDesktop.pdf">Index - Page 1</a></li>
+            <li><a href="report/mockups/articlesDesktop.pdf">Articles and Reviews - Page 2</a></li>
+            <li><a href="report/mockups/newsDesktop.pdf">News and Events - Page 3</a></li>
+            <li><a href="report/mockups/cinemasDesktop.pdf">Cinemas - Page 4</a></li>
+            <li><a href="report/mockups/aboutDesktop.pdf">About - Page 5</a></li>
+        </ul>
+        <h4>Mobile view</h4>
+        <ul>
+            <li><a href="report/mockups/homeMobile.png">Index - Page 1 - Mobile</a></li>
+            <li><a href="report/mockups/articlesMobile.png">Articles and Reviews - Page 2 - Moblie</a></li>
+            <li><a href="report/mockups/newsMobile.png">News and Events - Page 3 - Mobile</a></li>
+            <li><a href="report/mockups/cinemasMobile.png">Cinemas - Page 4 - Mobile</a></li>
+            <li><a href="report/mockups/aboutMobile.png">About - Page 5 - Mobile</a></li>
+        </ul>
+    </div>
+    <!--libraries and JS to be loaded on page-->
+    <script src="libraries/jquery/jquery-3.5.1.min.js"></script>
+    <script src="libraries/bootstrap-4.5.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
