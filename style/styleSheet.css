@@ -8,6 +8,10 @@
     font-weight: bold;
     src: url("../assets/fonts/MANIFESTO.ttf") format("truetype");
 }
+.slide-image{
+    width: 100%;
+    height: auto;
+}
 /*Media queries to handle responsive text size*/
 @media screen and (min-width: 300px) {
     .quote-text{
